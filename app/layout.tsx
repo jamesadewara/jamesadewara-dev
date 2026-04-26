@@ -6,6 +6,7 @@ import configPromise from "@/lib/config";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { BackgroundFx } from "@/components/site/BackgroundFx";
+import NextTopLoader from "nextjs-toploader";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -121,6 +122,16 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
+        <NextTopLoader
+          color="#4a7ad8"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #4a7ad8,0 0 5px #4a7ad8"
+        />
         <div className="relative min-h-screen flex flex-col">
           <BackgroundFx />
           <Header />
