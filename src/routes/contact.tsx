@@ -116,7 +116,7 @@ function ContactPage() {
     );
     // Brief artificial delay for nicer UX
     await new Promise((r) => setTimeout(r, 600));
-    window.location.href = `mailto:hello@jamesadewara.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:jamesadewara1@gmail.com?subject=${subject}&body=${body}`;
     setSent(true);
     reset();
     setTimeout(() => setSent(false), 5000);
