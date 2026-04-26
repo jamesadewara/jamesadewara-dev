@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import profileImg from "@/assets/profile.png";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -34,8 +35,8 @@ export function Header() {
           }`}
         >
           <Link to="/" className="group flex items-center gap-2.5">
-            <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-lg bg-[image:var(--gradient-brand)] text-[11px] font-bold text-white shadow-[0_4px_16px_-4px_oklch(0.6_0.22_270/0.5)]">
-              JA
+            <span className="relative inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-full ring-1 ring-border-strong shadow-[0_4px_16px_-4px_oklch(0.6_0.22_270/0.5)]">
+              <img src={profileImg} alt="James Adewara" className="h-full w-full object-cover" />
             </span>
             <span className="hidden sm:inline font-display text-sm font-semibold tracking-tight">
               James Adewara
