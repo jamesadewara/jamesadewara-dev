@@ -10,7 +10,6 @@ import {
   Linkedin,
   Loader2,
   Mail,
-  MessageCircle,
   Send,
   Twitter,
   Check,
@@ -66,32 +65,32 @@ const channels = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@jamesadewara.com",
-    href: "mailto:hello@jamesadewara.com",
+    value: "jamesadewara1@gmail.com",
+    href: "mailto:jamesadewara1@gmail.com",
   },
   {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "Chat directly",
-    href: "https://wa.me/2348000000000",
+    icon: Mail,
+    label: "Work email",
+    value: "cs@jamesadewara.me",
+    href: "mailto:cs@jamesadewara.me",
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "James Adewara",
+    href: "https://www.linkedin.com/in/james-adewara",
+  },
+  {
+    icon: Twitter,
+    label: "Twitter / X",
+    value: "@jamesadewaradev",
+    href: "https://x.com/jamesadewaradev",
   },
   {
     icon: Github,
     label: "GitHub",
     value: "@jamesadewara",
     href: "https://github.com/jamesadewara",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "in/jamesadewara",
-    href: "https://linkedin.com/in/jamesadewara",
-  },
-  {
-    icon: Twitter,
-    label: "Twitter / X",
-    value: "@jamesadewara",
-    href: "https://twitter.com/jamesadewara",
   },
 ];
 
@@ -117,7 +116,7 @@ function ContactPage() {
     );
     // Brief artificial delay for nicer UX
     await new Promise((r) => setTimeout(r, 600));
-    window.location.href = `mailto:hello@jamesadewara.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:jamesadewara1@gmail.com?subject=${subject}&body=${body}`;
     setSent(true);
     reset();
     setTimeout(() => setSent(false), 5000);

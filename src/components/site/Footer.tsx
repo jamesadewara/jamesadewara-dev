@@ -52,7 +52,7 @@ export function Footer() {
             </h4>
             <div className="mt-4 flex items-center gap-2">
               <a
-                href="mailto:hello@jamesadewara.com"
+                href="mailto:jamesadewara1@gmail.com"
                 aria-label="Email"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border hover:border-border-strong hover:bg-accent transition-colors"
               >
@@ -68,7 +68,7 @@ export function Footer() {
                 <Github className="h-4 w-4" />
               </a>
               <a
-                href="https://linkedin.com/in/jamesadewara"
+                href="https://www.linkedin.com/in/james-adewara"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -77,7 +77,7 @@ export function Footer() {
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="https://twitter.com/jamesadewara"
+                href="https://x.com/jamesadewaradev"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Languages, Briefcase, Rocket } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import profileImg from "@/assets/profile.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -105,26 +106,38 @@ function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="card-premium rounded-2xl p-6 h-fit"
+          className="space-y-6 h-fit"
         >
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-            Quick facts
-          </p>
-          <ul className="mt-5 space-y-4">
-            {facts.map((f) => (
-              <li key={f.label} className="flex items-start gap-3">
-                <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-surface-elevated">
-                  <f.icon className="h-4 w-4" />
-                </span>
-                <div>
-                  <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                    {f.label}
-                  </p>
-                  <p className="text-sm text-foreground">{f.value}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-surface-elevated">
+            <div className="absolute inset-0 bg-[image:var(--gradient-brand)] opacity-20 mix-blend-overlay pointer-events-none" />
+            <img
+              src={profileImg}
+              alt="Portrait of James Adewara at his desk with notebook, laptop and camera"
+              className="w-full h-auto block"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="card-premium rounded-2xl p-6">
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              Quick facts
+            </p>
+            <ul className="mt-5 space-y-4">
+              {facts.map((f) => (
+                <li key={f.label} className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-surface-elevated">
+                    <f.icon className="h-4 w-4" />
+                  </span>
+                  <div>
+                    <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
+                      {f.label}
+                    </p>
+                    <p className="text-sm text-foreground">{f.value}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
       </div>
     </section>
