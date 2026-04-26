@@ -27,7 +27,8 @@ const configPromise = Promise.resolve({
     twitter: process.env.TWITTER ?? '',
     github: process.env.GITHUB ?? '',
     linkedin: process.env.LINKEDIN ?? '',
-  }
+  },
+  adsenseId: process.env.ADSENSE_ID ?? '',
 })
 
 export type SiteConfig = Awaited<typeof configPromise>

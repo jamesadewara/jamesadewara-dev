@@ -129,6 +129,13 @@ export default async function RootLayout({
         {config.analyticsId && (
           <>
             <Script
+              id="adsense-id"
+              async
+              strategy="afterInteractive"
+              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${config.adsenseId}`}
+              crossOrigin="anonymous"
+            />
+            <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${config.analyticsId}`}
               strategy="afterInteractive"
             />
