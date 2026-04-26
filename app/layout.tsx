@@ -89,6 +89,7 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <meta name="google-adsense-account" content={config.adsenseId}></meta>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
