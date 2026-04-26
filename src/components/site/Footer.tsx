@@ -1,16 +1,33 @@
-import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
-import profileImg from "@/assets/profile.png";
+"use client";
 
-export function Footer() {
+import Link from "next/link";
+import Image from "next/image";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+
+interface FooterProps {
+  contactHrefs: {
+    email: string;
+    github: string;
+    linkedin: string;
+    twitter: string;
+  };
+}
+
+export function Footer({ contactHrefs }: FooterProps) {
   return (
     <footer className="relative mt-32 border-t border-border">
       <div className="container-tight py-12">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <Link to="/" className="flex items-center gap-2.5">
+            <Link href="/" className="flex items-center gap-2.5">
               <span className="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-full ring-1 ring-border-strong">
-                <img src={profileImg} alt="James Adewara" className="h-full w-full object-cover" />
+                <Image
+                  src="/favicon.ico"
+                  alt="James Adewara"
+                  width={32}
+                  height={32}
+                  className="h-full w-full object-cover"
+                />
               </span>
               <span className="font-display font-semibold tracking-tight">James Adewara</span>
             </Link>
@@ -25,22 +42,22 @@ export function Footer() {
             </h4>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link to="/" className="hover:text-foreground text-muted-foreground transition-colors">
+                <Link href="/" className="hover:text-foreground text-muted-foreground transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/work" className="hover:text-foreground text-muted-foreground transition-colors">
+                <Link href="/work" className="hover:text-foreground text-muted-foreground transition-colors">
                   Work
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-foreground text-muted-foreground transition-colors">
+                <Link href="/about" className="hover:text-foreground text-muted-foreground transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-foreground text-muted-foreground transition-colors">
+                <Link href="/contact" className="hover:text-foreground text-muted-foreground transition-colors">
                   Contact
                 </Link>
               </li>
@@ -53,14 +70,14 @@ export function Footer() {
             </h4>
             <div className="mt-4 flex items-center gap-2">
               <a
-                href="mailto:jamesadewara1@gmail.com"
+                href={`mailto:${contactHrefs.email}`}
                 aria-label="Email"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border hover:border-border-strong hover:bg-accent transition-colors"
               >
                 <Mail className="h-4 w-4" />
               </a>
               <a
-                href="https://github.com/jamesadewara"
+                href={contactHrefs.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -69,7 +86,7 @@ export function Footer() {
                 <Github className="h-4 w-4" />
               </a>
               <a
-                href="https://www.linkedin.com/in/james-adewara"
+                href={contactHrefs.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -78,10 +95,10 @@ export function Footer() {
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="https://x.com/jamesadewaradev"
+                href={contactHrefs.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="Twitter / X"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border hover:border-border-strong hover:bg-accent transition-colors"
               >
                 <Twitter className="h-4 w-4" />
@@ -95,7 +112,7 @@ export function Footer() {
 
         <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} James Adewara. All rights reserved.</p>
-          <p className="font-mono">built & shipped — solo.</p>
+          <p className="font-mono">built &amp; shipped — solo.</p>
         </div>
       </div>
     </footer>

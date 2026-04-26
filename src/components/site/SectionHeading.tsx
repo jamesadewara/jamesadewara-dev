@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -18,9 +20,8 @@ export function SectionHeading({ eyebrow, title, description, align = "left" }: 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.4 }}
-          className={`inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs font-medium text-muted-foreground ${
-            align === "center" ? "mx-auto" : ""
-          }`}
+          className={`inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs font-medium text-muted-foreground ${align === "center" ? "mx-auto" : ""
+            }`}
         >
           <span className="h-1.5 w-1.5 rounded-full bg-[image:var(--gradient-brand)]" />
           {eyebrow}
