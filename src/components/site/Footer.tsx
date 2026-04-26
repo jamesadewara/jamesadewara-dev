@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import profileImg from "@/assets/profile.png";
 
 export function Footer() {
   return (
@@ -8,8 +9,8 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <Link to="/" className="flex items-center gap-2.5">
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-[image:var(--gradient-brand)] text-[11px] font-bold text-white">
-                JA
+              <span className="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-full ring-1 ring-border-strong">
+                <img src={profileImg} alt="James Adewara" className="h-full w-full object-cover" />
               </span>
               <span className="font-display font-semibold tracking-tight">James Adewara</span>
             </Link>
