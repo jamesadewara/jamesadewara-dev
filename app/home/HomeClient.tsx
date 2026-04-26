@@ -362,7 +362,7 @@ export default function HomeClient({ contactHrefs }: { contactHrefs: { phone: st
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href={`https://wa.me/${contactHrefs.phone}`}
+                href={`https://wa.me/${contactHrefs.phone}?text=${encodeURIComponent("Hi James, I saw your portfolio and I'd like to discuss a project.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-accent transition-colors"

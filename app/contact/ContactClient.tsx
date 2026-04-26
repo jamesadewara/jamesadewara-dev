@@ -59,13 +59,13 @@ export default function ContactClient({ contactHrefs }: { contactHrefs: ContactH
       icon: Mail,
       label: "Email",
       value: contactHrefs.email,
-      href: `mailto:${contactHrefs.email}`,
+      href: `mailto:${contactHrefs.email}?subject=${encodeURIComponent("Project Inquiry")}&body=${encodeURIComponent("Hi James,\n\nI'd like to discuss a potential project with you.")}`,
     },
     {
       icon: Mail,
       label: "Work email",
       value: contactHrefs.workEmail,
-      href: `mailto:${contactHrefs.workEmail}`,
+      href: `mailto:${contactHrefs.workEmail}?subject=${encodeURIComponent("Project Inquiry")}&body=${encodeURIComponent("Hi James,\n\nI'd like to discuss a potential project with you.")}`,
     },
     {
       icon: Linkedin,
@@ -77,7 +77,7 @@ export default function ContactClient({ contactHrefs }: { contactHrefs: ContactH
       icon: Twitter,
       label: "Twitter / X",
       value: "@jamesadewaradev",
-      href: contactHrefs.twitter,
+      href: `https://twitter.com/intent/tweet?text=${encodeURIComponent("Hi @jamesadewaradev, I'd like to discuss a project with you!")}`,
     },
     {
       icon: Github,
